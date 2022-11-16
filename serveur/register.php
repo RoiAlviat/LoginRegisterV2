@@ -6,14 +6,6 @@ $users = $db->query("SELECT * FROM users");
 
 $sav = $db->prepare("INSERT INTO users(names, passwords, mails) VALUES(:pseudo, :mdp, :mail)");
 
-while ($user = $users->fetch()) { // Test require
-    echo "ID : ".$user["ids"]."<br/>";
-    echo "Pseudo : ".$user["names"]."<br/>";
-    echo "Mot de passe : ".$user["passwords"]."<br/>";
-    echo "Adresse Mail : ".$user["mails"]."<br/>";
-    echo "Date d'inscription : ".$user["dates"]."<br/>"."<br/>";
-}
-
 if (isset($_POST["envoie"])) {
     $name = $_POST['pseudo'];
     $mdp = $_POST['mdp'];
@@ -26,11 +18,11 @@ if (isset($_POST["envoie"])) {
     $num_rows_name = $result_name->rowCount();
     
     if ($name!="" and $num_rows_name==0) {
-        echo "Pseudonyme non utilisé !"."<br/>";
+         print "Pseudonyme non utilisé !"."<br/>";
         if ($email!="" and $num_rows_mail==0) {
-            echo "Mail non utilisé !"."<br/>";
+             print "Mail non utilisé !"."<br/>";
             if ($_POST["vmdp"]==$mdp) {
-                echo "Vérification du mot de passe réussie !"."<br/>";
+                 print "Vérification du mot de passe réussie !"."<br/>";
 
                 // Opérations après vérifications :
                 $sav->execute([
@@ -39,13 +31,13 @@ if (isset($_POST["envoie"])) {
                     'mail' => $email,
                 ]);
             } else {
-                echo "Vérification du mot de passe échouée !"."<br/>";
+                 print "Vérification du mot de passe échouée !"."<br/>";
             }
         } elseif ($email!="" and $num_rows_mail>=1) {
-            echo "Mail déjà utilisé !"."<br/>";
+             print "Mail déjà utilisé !"."<br/>";
         }
     } elseif ($name!="" and $num_rows_name!=0) {
-        echo "Pseudo non disponible !"."<br/>";
+         print "Pseudo non disponible !"."<br/>";
     };
     error_reporting(E_ERROR | E_PARSE);
 }
