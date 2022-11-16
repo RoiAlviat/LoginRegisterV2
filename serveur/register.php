@@ -1,8 +1,10 @@
 <?php
-include 'connection.php';
+include 'C:\wamp64\www\LoginRegisterV2\serveur\connection.php';
 global $db;
 
 $users = $db->query("SELECT * FROM users");
+
+$sav = $db->prepare("INSERT INTO users(names, passwords, mails) VALUES(:pseudo, :mdp, :mail)");
 
 while ($user = $users->fetch()) { // Test require
     echo "ID : ".$user["ids"]."<br/>";
@@ -31,7 +33,11 @@ if (isset($_POST["envoie"])) {
                 echo "Vérification du mot de passe réussie !"."<br/>";
 
                 // Opérations après vérifications :
-                
+                $sav->execute([
+                    'pseudo' => $name,
+                    'mdp' => $mdp,
+                    'mail' => $email,
+                ]);
             } else {
                 echo "Vérification du mot de passe échouée !"."<br/>";
             }
