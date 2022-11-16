@@ -1,5 +1,5 @@
 <?php
-include 'C:\wamp64\www\LoginRegisterV2\connection.php';
+include 'connection.php';
 global $db;
 
 $users = $db->query("SELECT * FROM users");
