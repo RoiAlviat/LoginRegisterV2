@@ -1,27 +1,27 @@
 <?php
     include 'connection.php';
     global $db;
+    
+    if (isset($_POST["envoie"])) {
+        $mail = $_POST['mail'];
+        $pass = $_POST['mdp'];
 
-    $email = $_POST["mail"];
-    $pass = $_POST["mdp"];
+        $con = mysqli_connect('localhost', 'root', '', 'db');
+    
+        $usermail = stripcslashes($mail);
+        $password = stripcslashes($pass);
+        $usermail = mysqli_real_escape_string($con, $_POST['mail']);
+        $password = mysqli_real_escape_string($con, $_POST['mdp']);
+    
+        $result = $db->query("SELECT * FROM users where mails = '$usermail' and passwords = '$password'"); 
+        $count = $result->rowCount();
 
-    session_start();
-
-    $con = mysqli_connect('localhost', 'root', '', 'db');
-
-    $usermail = stripcslashes($email);  
-    $password = stripcslashes($pass);
-    $usermail = mysqli_real_escape_string($con, $usermail);  
-    $password = mysqli_real_escape_string($con, $password); 
-  
-    $result = $db->query("SELECT * FROM users where mails = '$usermail' and passwords = '$password'"); 
-    $count = $result->rowCount();
-        
-    if ($count==1) {  
-        print "Login successful !";  
-    } else {  
-        print "Login failed. Invalid mail or password.";  
-    };    
+        if ($count!=0) {
+            print "Login successful !";
+        } else {
+            print "Login failed. Invalid mail or password.";
+        };    
+    }
 ?>
 
 <!DOCTYPE html>
