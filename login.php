@@ -4,22 +4,22 @@
     
     if (isset($_POST["envoie"])) {
         $mail = $_POST['mail'];
-        $pass = $_POST['mdp'];
+        $passw = $_POST['mdp'];
 
         $con = mysqli_connect('localhost', 'root', '', 'db');
     
         $usermail = stripcslashes($mail);
-        $password = stripcslashes($pass);
-        $usermail = mysqli_real_escape_string($con, $_POST['mail']);
-        $password = mysqli_real_escape_string($con, $_POST['mdp']);
+        $password = stripcslashes($passw);
+        $usermail = mysqli_real_escape_string($con, $usermail);
+        $password = mysqli_real_escape_string($con, $password);
     
         $result = $db->query("SELECT * FROM users where mails = '$usermail' and passwords = '$password'"); 
         $count = $result->rowCount();
 
         if ($count!=0) {
-            print "Login successful !";
+            header('Location: connected.php');
         } else {
-            print "Login failed. Invalid mail or password.";
+            print "Connexion échouée, veuillez vérifier vos informations !";
         };    
     }
 ?>

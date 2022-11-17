@@ -12,7 +12,9 @@
 <main>
         <div class="container">
             
-        <h1>VOUS ETES CONNECTE</h1>
+        <h1><?php include 'connection.php';
+        print 'Vous êtes connecté !';
+        ?></h1>
 
 
         </div>
