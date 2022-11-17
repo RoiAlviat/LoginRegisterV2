@@ -1,3 +1,29 @@
+<?php
+    include 'connection.php';
+    global $db;
+
+    $email = $_POST["mail"];
+    $pass = $_POST["mdp"];
+
+    session_start();
+
+    $con = mysqli_connect('localhost', 'root', '', 'db');
+
+    $usermail = stripcslashes($email);  
+    $password = stripcslashes($pass);
+    $usermail = mysqli_real_escape_string($con, $usermail);  
+    $password = mysqli_real_escape_string($con, $password); 
+  
+    $result = $db->query("SELECT * FROM users where mails = '$usermail' and passwords = '$password'"); 
+    $count = $result->rowCount();
+        
+    if ($count==1) {  
+        print "Login successful !";  
+    } else {  
+        print "Login failed. Invalid mail or password.";  
+    };    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +42,7 @@
         <div class="container">
             <form method="post">
                 <span>Login</span>
-                <input class="inputtext" type="text" name="pseudo" id="pseudo" placeholder="Votre Pseudo" required>
+                <input class="inputtext" type="text" name="mail" id="mail" placeholder="Votre adresse mail" required>
                 <input class="inputtext" type="text" name="mdp" id="mdp" placeholder="Votre mot de passe" required>
                 <input class="inputsubmit" value="Connexion" type="submit" name="envoie" id="envoie">
                 <span class="inscription">Pas encore inscrit ? <a href="./register.php">Inscrivez-vous !</a></span>
