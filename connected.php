@@ -32,6 +32,10 @@
                 if (isset($_SESSION["user_login"])) {
                     print "Bienvenue, ".$row['names']." !";
                 }
+
+                if (isset($_POST['logout'])) {
+                    header("location: logout.php");
+                }
             ?>
         </h1>
 
