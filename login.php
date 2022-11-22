@@ -2,6 +2,7 @@
     include 'connection.php';
     global $db;
     
+
     if (isset($_POST["envoie"])) {
         $mail = $_POST['mail'];
         $passw = $_POST['mdp'];

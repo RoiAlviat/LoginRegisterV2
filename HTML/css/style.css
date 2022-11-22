@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./img/pizza.jpg);
+    background-repeat: no-repeat;
+    backdrop-filter: brightness(60%);
+
+    
+}
+
+header {
+    width: 100vw;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    width: 180px;
+    height: 180px;
+}
+
+nav {
+    display: flex;
+    font-family: 'Amatic SC', cursive;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 45px;
+    height: 8vh;
+    backdrop-filter: brightness(60%);
+}
+
+header a {
+    text-decoration: underline;
+    color: #f1f1f1;
+}
+
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10vh;
+    margin: 2vw;
+    
+}
+
+main h2 {
+    position: absolute;
+    top: 400px;
+    left: 65px;
+    color: #f1f1f1;
+    font-family: 'Amatic SC', cursive;
+    font-size: 35px;
+}
+
+.pizza {
+    left: 210px;
+}
+
+.tomate {
+    top: 500px
+}
+
+.champi {
+    top: 500px;
+}
+
+.mozza {
+    top: 550px;
+}
+
+.fromage {
+    top: 600px;
+}
