@@ -1,11 +1,10 @@
 <?php
     include 'connection.php';
-    global $db;
     
     if (isset($_POST["envoie"])) {
         $mail = $_POST['mail'];
         $passw = $_POST['mdp'];
-
+    }
     if (isset($_SESSION["user_login"])) {
         header('location: connected.php');
     }
@@ -29,7 +28,7 @@
                     if ($email==$row["mails"]) {
                         if ($password == $row["passwords"]) {
                             $_SESSION["user_login"] = $row["ids"];
-                            header('refresh:2; connected.php');
+                            header('refresh:1; connected.php');
                         } else {
                             print "Mot de passe incorrect !";
                         }
