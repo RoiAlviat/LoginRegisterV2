@@ -1,14 +1,11 @@
 <?php
-    include 'connection.php';
+    require_once 'connection.php';
+
+    session_start();
     
-    if (isset($_POST["envoie"])) {
-        $mail = $_POST['mail'];
-        $passw = $_POST['mdp'];
-    }
     if (isset($_SESSION["user_login"])) {
         header('location: connected.php');
     }
-
     if (isset($_REQUEST["envoie"])) {
         $email = $_REQUEST["mail"];
         $password = $_REQUEST["mdp"];

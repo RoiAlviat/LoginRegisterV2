@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+require_once 'connection.php';
 
 $users = $db->query("SELECT * FROM users");
 $sav = $db->prepare("INSERT INTO users(names, passwords, mails) VALUES(:pseudo, :mdp, :mail)");
