@@ -10,7 +10,7 @@
 <body>
     
 <main>
-        <div class="container">
+    <div class="container">
             
         <h1>
             <?php
@@ -36,10 +36,15 @@
         </h1>
 
 
-        </div>
+            <input type="submit" id="logout" name="logout">       
+
+    </div>
         
+                
 
     </main>
+
+    
     
 
 </body>
