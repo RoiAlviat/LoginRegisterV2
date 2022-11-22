@@ -35,8 +35,9 @@
             ?>
         </h1>
 
-
-            <input type="submit" id="logout" name="logout">       
+            <form method="post">
+                <input type="submit" id="logout" name="logout">    
+            </form>   
 
     </div>
         
