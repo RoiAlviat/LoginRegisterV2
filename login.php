@@ -1,26 +1,43 @@
 <?php
-    include 'connection.php';
-    global $db;
-    
-    if (isset($_POST["envoie"])) {
-        $mail = $_POST['mail'];
-        $passw = $_POST['mdp'];
+    require_once 'connection.php';
 
-        $con = mysqli_connect('localhost', 'root', '', 'db');
-    
-        $usermail = stripcslashes($mail);
-        $password = stripcslashes($passw);
-        $usermail = mysqli_real_escape_string($con, $usermail);
-        $password = mysqli_real_escape_string($con, $password);
-    
-        $result = $db->query("SELECT * FROM users where mails = '$usermail' and passwords = '$password'"); 
-        $count = $result->rowCount();
+    session_start();
 
-        if ($count!=0) {
-            header('Location: connected.php');
+    if (isset($_SESSION["user_login"])) {
+        header('location: connected.php');
+    }
+
+    if (isset($_REQUEST["envoie"])) {
+        $email = $_REQUEST["mail"];
+        $password = $_REQUEST["mdp"];
+
+        if (empty($email)) {
+            print "Mail vide !";
+        } elseif (empty($password)) {
+            print "Mot de passe vide !";
         } else {
-            print "Connexion échouée, veuillez vérifier vos informations !";
-        };    
+            try {
+                $select_stmt = $db->prepare('SELECT * FROM users WHERE mails = :umail');
+            
+                $select_stmt->execute(array(':umail'=>$email));
+                $row = $select_stmt->fetch(PDO::FETCH_ASSOC);
+
+                if ($select_stmt->rowCount() > 0) {
+                    if ($email==$row["mails"]) {
+                        if ($password == $row["passwords"]) {
+                            $_SESSION["user_login"] = $row["ids"];
+                            header('refresh:2; connected.php');
+                        } else {
+                            print "Mot de passe incorrect !";
+                        }
+                    } else {
+                        print "Adresse mail incorrecte !";
+                    }
+                }
+            } catch (PDOException $e) {
+                $e->getMessage();
+            }
+        }
     }
 ?>
 

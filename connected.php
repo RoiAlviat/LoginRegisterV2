@@ -12,9 +12,28 @@
 <main>
         <div class="container">
             
-        <h1><?php include 'connection.php';
-        print 'Vous êtes connecté !';
-        ?></h1>
+        <h1>
+            <?php
+                require_once 'connection.php';
+
+                session_start();
+
+                if (!isset($_SESSION["user_login"])) {
+                    header("location: login.php");
+                }
+
+                $cusername = $_SESSION["user_login"];
+
+                $select_stmt = $db->prepare("SELECT * FROM users WHERE ids = :cuname");
+                $select_stmt->execute(array(":cuname"=>$cusername));
+
+                $row = $select_stmt->fetch(PDO::FETCH_ASSOC);
+
+                if (isset($_SESSION["user_login"])) {
+                    print "Bienvenue, ".$row['names']." !";
+                }
+            ?>
+        </h1>
 
 
         </div>
