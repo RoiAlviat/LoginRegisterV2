@@ -28,7 +28,7 @@
                     if ($email==$row["mails"]) {
                         if ($password == $row["passwords"]) {
                             $_SESSION["user_login"] = $row["ids"];
-                            header('refresh:1; connected.php');
+                            header('location: connected.php');
                         } else {
                             print "Mot de passe incorrect !";
                         }
