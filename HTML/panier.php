@@ -16,7 +16,7 @@ if(!isset($_SESSION['panier']))
     }
 }
 
-function verif_panier($ref_article)
+function verif_panier($ref_article) // == id de l'article
 {
     $present = false;
     
@@ -36,7 +36,7 @@ function ajout_panier($id, $qte, $taille, $prix)
     $select['prix'] = $prix; //number
 
     $ajout = false;
-    
+
     if(!isset($_SESSION['panier']['verrouille']) || $_SESSION['panier']['verrouille'] == false)
     {
         if(!verif_panier($select['id']))
