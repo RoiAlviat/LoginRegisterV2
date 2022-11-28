@@ -66,7 +66,6 @@ function supprim_article($ref_article)
 
     for($i = 0; $i < $nb_articles; $i++)
     {
-
         if($_SESSION['panier']['id_article'][$i] != $ref_article)
         {
             array_push($panier_tmp['id_article'],$_SESSION['panier']['id_article'][$i]);
@@ -80,7 +79,7 @@ function supprim_article($ref_article)
 
     unset($panier_tmp);
     $suppression = true;
-    
+
     return $suppression;
 }
 ?>
