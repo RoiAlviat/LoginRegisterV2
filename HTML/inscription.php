@@ -102,7 +102,7 @@ if (isset($_POST["envoie"])) {
                 
                 <label class="label" for="CGU"><input class="inputcheckbox" type="checkbox" required>J'accepte les conditions générales d'utilisations.</label>
                 <input class="inputsubmit" type="submit" value="Inscription" name="envoie" id="envoie">
-                <span class="connexion">Déjà un compte ? <a href="./login.php">Connectez-vous !</a></span>
+                <span class="connexion">Déjà un compte ? <a href="./connexion.php">Connectez-vous !</a></span>
             </form>
 
 
