@@ -80,6 +80,7 @@ function supprim_article($ref_article)
 
     unset($panier_tmp);
     $suppression = true;
+    
     return $suppression;
 }
 ?>
