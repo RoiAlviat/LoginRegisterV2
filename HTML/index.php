@@ -1,10 +1,3 @@
-<?php
-    if(isset($_POST['add'])){
-        echo 'SY';
-    }
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
