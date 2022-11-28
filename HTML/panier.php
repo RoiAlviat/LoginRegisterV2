@@ -53,6 +53,7 @@ function modif_qte($ref_article, $qte)
             $ajoute = true;
         }
     }
+
     return $ajoute;
 }
 
@@ -78,6 +79,7 @@ function supprim_article($ref_article)
     $_SESSION['panier'] = $panier_tmp;
 
     unset($panier_tmp);
+    
     $suppression = true;
 
     return $suppression;
