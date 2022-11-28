@@ -1,3 +1,45 @@
+<?php
+    require_once 'db.php';
+
+    session_start();
+    
+    if (isset($_SESSION["user_login"])) {
+        header('location: connected.php');
+    }
+    if (isset($_REQUEST["envoie"])) {
+        $email = $_REQUEST["mail"];
+        $password = $_REQUEST["mdp"];
+
+        if (empty($email)) {
+            print "Mail vide !";
+        } elseif (empty($password)) {
+            print "Mot de passe vide !";
+        } else {
+            try {
+                $select_stmt = $db->prepare('SELECT * FROM users WHERE mails = :umail');
+            
+                $select_stmt->execute(array(':umail'=>$email));
+                $row = $select_stmt->fetch(PDO::FETCH_ASSOC);
+
+                if ($select_stmt->rowCount() > 0) {
+                    if ($email==$row["mails"]) {
+                        if ($password == $row["passwords"]) {
+                            $_SESSION["user_login"] = $row["ids"];
+                            header('location: connected.php');
+                        } else {
+                            print "Mot de passe incorrect !";
+                        }
+                    } else {
+                        print "Adresse mail incorrecte !";
+                    }
+                }
+            } catch (PDOException $e) {
+                $e->getMessage();
+            }
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
