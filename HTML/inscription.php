@@ -1,3 +1,63 @@
+<?php
+require_once 'db.php';
+
+$users = $db->query("SELECT * FROM users");
+$sav = $db->prepare("INSERT INTO users(names, passwords, mails) VALUES(:pseudo, :mdp, :mail)");
+
+$this_user = $db->prepare("");
+
+if (isset($_POST["envoie"])) {
+    $name = $_POST['pseudo'];
+    $mdp = $_POST['mdp'];
+    $email = $_POST['mail'];
+
+    $result_mail = $db->query("SELECT * FROM users WHERE mails='".$email."'");
+    $num_rows_mail = $result_mail->rowCount();
+
+    $result_name = $db->query("SELECT * FROM users WHERE names='".$name."'");
+    $num_rows_name = $result_name->rowCount();
+    
+    if ($name!="" and $num_rows_name==0) {
+        print "Pseudonyme non utilisé !"."<br/>";
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            if ($email!="" and $num_rows_mail==0) {
+                print "Mail non utilisé !"."<br/>";
+                if (strlen($mdp) >= 6) {
+                    print "Mot de passe correct !"."<br/>";
+                    if ($_POST["vmdp"]==$mdp) {
+                    print "Vérification du mot de passe réussie !"."<br/>";
+    
+                    // Opérations après vérifications !
+                    $result_id = $db->query("SELECT ids FROM users WHERE mails='".$email."'");
+                    $num_rows_id = $result_id->rowCount();
+    
+                    $result_username = $db->query("SELECT names FROM users WHERE mails='".$email."'");
+                    $num_rows_username = $result_username->rowCount();
+    
+                    $sav->execute([
+                        'pseudo' => $name,
+                        'mdp' => $mdp,
+                        'mail' => $email,
+                    ]);
+                    } else {
+                        print "Le mot de passe doit comporter au moins 6 caractères !"."<br/>";
+                    }
+                } else {
+                     print "Vérification du mot de passe échouée !"."<br/>";
+                }
+            } elseif ($email!="" and $num_rows_mail>=1) {
+                 print "Mail déjà utilisé !"."<br/>";
+            }
+        } else {
+            print "Le format de votre mail est incorrect !";
+        }
+    } elseif ($name!="" and $num_rows_name!=0) {
+         print "Pseudo non disponible !"."<br/>";
+    };
+    error_reporting(E_ERROR | E_PARSE);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
