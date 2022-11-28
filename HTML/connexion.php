@@ -4,7 +4,7 @@
     session_start();
     
     if (isset($_SESSION["user_login"])) {
-        header('location: index.php');
+        header('location: connected.html');
     }
     if (isset($_REQUEST["envoie"])) {
         $email = $_REQUEST["mail"];
@@ -25,7 +25,7 @@
                     if ($email==$row["mails"]) {
                         if ($password == $row["passwords"]) {
                             $_SESSION["user_login"] = $row["ids"];
-                            header('location: index.php');
+                            header('location: connected.html');
                         } else {
                             print "Mot de passe incorrect !";
                         }
