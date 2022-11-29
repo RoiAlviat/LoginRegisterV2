@@ -31,7 +31,7 @@
 
             <a href=""><div class="contacthoraire">Contact & Horaires</div></a>
 
-            <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="./panier"><i class="fa-solid fa-cart-shopping"></i></a>
             
                 
         </nav>
