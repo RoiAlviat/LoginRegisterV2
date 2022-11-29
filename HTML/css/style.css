@@ -2,6 +2,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
+    
 }
 
 body {
@@ -9,7 +11,7 @@ body {
     background-repeat: repeat;
     backdrop-filter: brightness(60%);
 
-    
+
 }
 
 header {
@@ -22,8 +24,12 @@ header {
 }
 
 .logo img {
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 120px;
+}
+
+.fa-cart-shopping {
+    font-size: 40px;
 }
 
 nav {
@@ -34,7 +40,10 @@ nav {
     font-size: 45px;
     height: 8vh;
     backdrop-filter: brightness(60%);
+    color: #f1f1f1;
 }
+
+
 
 header a {
     text-decoration: underline;
@@ -95,7 +104,7 @@ header a {
 
 .container {
     width: 100vw;
-    height: 73vh;
+    height: 79.1vh;
     display: flex;
     justify-content: center;
     align-items: center;

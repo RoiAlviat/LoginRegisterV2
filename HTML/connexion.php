@@ -4,7 +4,7 @@
     session_start();
     
     if (isset($_SESSION["user_login"])) {
-        header('location: connected.html');
+        header('location: connected.php');
     }
     if (isset($_REQUEST["envoie"])) {
         $email = $_REQUEST["mail"];

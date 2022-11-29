@@ -23,9 +23,9 @@
         <nav>
 
             
+            <a href=""><div class="connexion"><i class="fa-solid fa-user"></i></div></a>
+            
             <a href=""><div class="accueil">Accueil</div></a>
-
-            <a href="./connexion.php"><div class="connexion">Connexion</div></a>
 
             <a href=""><div class="Commandez">Commandez</div></a>
 
