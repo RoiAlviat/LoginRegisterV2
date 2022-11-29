@@ -8,7 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Raleway:ital,wght@0,200;0,400;0,600;1,400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/83ac43579f.js" crossorigin="anonymous"></script>
-    <script src="./js/script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
@@ -34,79 +37,133 @@
     </header>
 
 
-    <main>
-        <form method="post" class="menu-container">
-            <div class="pizza-container">
-                <div class="pizza">
+    
+       <div class="container">
+
+            <div class="swiper mySwiper">
+
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <h1>KEBAB</h1>
+                            <div class="prix">MOYENNE 8€ - GRANDE 12€</div>
+                            <div class="ingredients">
+                                <span>-Base Crème-</span>
+                                <span>-Viande de kébab-</span>
+                                <span>-Oignons-</span>
+                                <span>-Poivrons-</span>
+                                <span>-Olives-</span>
+                            </div>
+                        </div>
+                    </div>
+              
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <h1>Royale</h1>
+                            <div class="prix">MOYENNE 8€ - GRANDE 12€</div>
+                            <div class="ingredients">
+                                <span>-Base Tomate-</span>
+                                <span>-Champignons-</span>
+                                <span>-Fromage-</span>
+                                <span>-Olives-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <h1>Chorizo</h1>
+                            <div class="prix">MOYENNE 8€ - GRANDE 12€</div>
+                            <div class="ingredients">
+                                <span>-Base Tomate-</span>
+                                <span>-Chorizo-</span>
+                                <span>-Fromage-</span>
+                                <span>-Olives-</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                <div class="swiper-slide">
+
+                    <div class="card">
+                        <h1>Chèvre</h1>
+                        <div class="prix">MOYENNE 8€ - GRANDE 12€</div>
+                        <div class="ingredients">
+                            <span>-Base Tomate-</span>
+                            <span>-Fromage de chèvre-</span>
+                            <span>-Fromage-</span>
+                            <span>-Olives-</span>
+                        </div>
+                    </div>
+                </div>
+            <div class="swiper-slide">
+                <div class="card">
+                    <h1 class="montagnarde">Montagnarde</h1>
+                    <div class="prix">MOYENNE 8€ - GRANDE 12€</div>
+                    <div class="ingredients">
+                        <span>-Base Tomate-</span>
+                        <span>-Roblochon-</span>
+                        <span>-Olives-</span>
+                        <span>-Oignons-</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                    <h1 class="norvégienne">Norvégienne</h1>
+                    <div class="prix">MOYENNE 8€ - GRANDE 12€</div>
+                    <div class="ingredients">
+                        <span>-Base Tomate-</span>
+                        <span>-Saumon fumée-</span>
+                        <span>-Fromage-</span>
+                        <span>-Olives-</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
                     <h1>Oriental</h1>
-                </div>
-                <div class="ingredients">
-                    <h2>Moyenne 8€ - Grande 12€</h1>
-                    <h3>Base Tomate</h2>
-                    <h3>Merguez</h2>
-                    <h3>Poivrons</h2>
-                    <h3>Olives</h2>
-                </div>
-                <div class="add-item">
-                    <i class="fa-solid fa-plus"></i>
+                    <div class="prix">MOYENNE 8€ - GRANDE 12€</div>
+                    <div class="ingredients">
+                        <span>-Base Tomate-</span>
+                        <span>-Merguez-</span>
+                        <span>-Oignons-</span>
+                        <span>-Poivrons-</span>
+                        <span>-Olives-</span>
+                    </div>
                 </div>
             </div>
 
-
-            <div class="pizza-container">
-                <div class="pizza">
-                    <h1>Royale</h1>
-                </div>
-                <div class="ingredients">
-                    <h2>Moyenne 8€ - Grande 12€</h1>
-                    <h3>Base Tomate</h2>
-                    <h3>Champignons</h2>
-                    <h3>Fromage</h2>
-                    <h3>Olives</h2>
-                </div>
-                <div class="add-item">
-                    <i class="fa-solid fa-plus"></i>
-                </div>
             </div>
-
-
-            <div class="pizza-container">
-                <div class="pizza">
-                    <h1>Kébab</h1>
-                </div>
-                <div class="ingredients">
-                    <h2>Moyenne 8€ - Grande 12€</h1>
-                    <h3>Base Crème</h2>
-                    <h3>Viande de kébab</h2>
-                    <h3>Oignons</h2>
-                    <h3>Olives</h2>
-                </div>
-                <div class="add-item">
-                    <i class="fa-solid fa-plus"></i>
-                </div>
-            </div>
-
-
-            <div class="pizza-container">
-                <div class="pizza">
-                    <h1>Chèvre</h1>
-                </div>
-                <div class="ingredients">
-                    <h2>Moyenne 8€ - Grande 12€</h1>
-                    <h3>Base Tomate</h2>
-                    <h3>Fromage de Chèvre</h2>
-                    <h3>Fromage</h2>
-                    <h3>Olives</h2>
-                </div>
-                <div class="add-item">
-                    <i class="fa-solid fa-plus"></i>
-                </div>
-
-                
-            </div>
-            
-        </form>
-    </main>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div> 
+        </div>       
+    
     
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 210,
+      loop: true,
+      autoplay: {
+          delay: 2500,
+          disableOnInteraction: true,
+        },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
 </html>

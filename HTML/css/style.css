@@ -1,7 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-    overflow: hidden;
     box-sizing: border-box;
 }
 
@@ -43,84 +42,80 @@ header a {
 }
 
 
-.menu-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10vh;
-    height: 65vh;
-    margin: 2vw;
-}
+/*////////////////////////////////////////////////////////////////HEADER///////////////////////////////////////////////////////////*/
 
-.menu-container input {
-    position: relative;
-    z-index: 1;
-    width: 50px;
-    height: 50px;
-    border-radius: 200px;
-    left: 185px;
-    bottom: 100px;
-    font-size: 20px;
-    font-family: 'Font Awesome\ 5 Free';
-    font-weight: 400;
-    
-}
-
-.menu-container i {
-    position: relative;
-    top: 3px;
-}
-
-.menu-container div {
-    width: 415px;
-
-}
-
-.pizza-container {
-    background-image: url(./img/ardoisevierge.jpg);
-    background-repeat: no-repeat;
-    font-family: 'Amatic SC', cursive;
-    color: #f1f1f1;
-    border-radius: 15px;
-}
-
-.pizza {
-    margin-top: 59px;
+.card {
     display: flex;
     flex-direction: column;
-    height: 10.5%;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     align-items: center;
-    font-size: 25px;
+    background-image: url(./img/ardoisevierge.jpg);
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 420px;
+    border-radius: 25px;
 }
 
 .ingredients {
+    margin-top: 25px;
+    width: 400px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
-    font-size: 30px;
+    justify-content: center;
+    font-size: 35px;
+    color: #f1f1f1;
+    font-family: 'Amatic SC', cursive;
 }
 
-.add-item {
+.card h1 {
+    margin-top: 48px;
+    font-size: 65px;
+    color: #f1f1f1;
+    font-family: 'Amatic SC', cursive;
+}
+
+.norvégienne {
+    margin-top: 58px !important;
+    font-size: 48px !important;
+}
+
+.montagnarde {
+    margin-top: 58px !important;
+    font-size: 48px !important; 
+}
+
+.prix {
+    margin-top: 35px;
+    font-size: 50px;
+    color: #f1f1f1;
+    font-family: 'Amatic SC', cursive;
+}
+
+.container {
+    width: 100vw;
+    height: 73vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
-    height: 10%;
-
+.swiper {
+    width: 90%;
+    height: fit-content;
 }
 
 
+.swiper-slide img {
+    width: 500px;
+    height: 500px;
+}
 
-.add-item i {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f1f1f1;
-    border-radius: 250px;
-    width: 50px;
-    height: 50px;
-    color: black;
-    font-size: 25px;
+.swiper-button-next {
+    color: #f1f1f1;
+}
+
+.swiper-button-prev {
+    color: #f1f1f1;
 }

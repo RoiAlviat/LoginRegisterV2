@@ -15,3 +15,17 @@ try {
 }
 
 ?>
+
+
+<div class="container">
+                <div class="card swiper-slide">
+                    <h1>PIZZA</h1>
+                    <div class="prix">MOYENNE 8€ - GRANDE 12€</div>
+                    <div class="ingredients">
+                        <span>-BOUBOU-</span>
+                        <span>-BOUBOU-</span>
+                        <span>-BOUBOU-</span>
+                        <span>-BOUBOU-</span>
+                    </div>
+                </div>
+            </div>
