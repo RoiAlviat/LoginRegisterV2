@@ -12,7 +12,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/connected.css">
     <title>Document</title>
 </head>
 <body>
@@ -31,7 +31,13 @@
 
             <a href=""><div class="contacthoraire">Contact & Horaires</div></a>
 
-            <a href="./panier"><i class="fa-solid fa-cart-shopping"></i></a>
+            <div><i class="fa-solid fa-cart-shopping"></i>
+                <div class="shop-container">
+                    <div class="shop-article"></div>
+                    <div class="shop-article"></div>
+                    <div class="shop-article"></div>
+                </div>
+
             
                 
         </nav>
