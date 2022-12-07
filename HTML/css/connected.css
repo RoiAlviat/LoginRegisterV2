@@ -91,10 +91,16 @@ nav {
     font-size: 20px;
 }
 
-.qte {
+.center {
     display: flex;
     justify-content: center;
+    align-items: center;   
     border: 1px solid grey;
+}
+
+.qte {
+    
+    
     width: 25px;
 }
 

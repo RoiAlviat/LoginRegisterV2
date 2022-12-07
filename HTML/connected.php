@@ -34,10 +34,10 @@
             <div><i class="fa-solid fa-cart-shopping"></i>
                 <div class="shop-container">
                     <div class="shop-article article1">
-                        <div class="qte"><span>1</span></div>
-                        <div class="choix-article">Royale</div>
-                        <div class="size">Large</div>
-                        <div class="prix-article">L</div>
+                        <div class="qte center"><span>1</span></div>
+                        <div class="choix-article center"><span>Royale</span></div>
+                        <div class="size center"><span>Large</span></div>
+                        <div class="prix-article center">9.99€</div>
                     </div>
                 </div>
             </div>
