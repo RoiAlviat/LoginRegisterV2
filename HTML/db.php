@@ -1,17 +1,33 @@
 <?php 
+class DB{
+    private $host = 'localhost';
+    private $username = 'root';
+    private $password = '';
+    private $database = 'db';
+    public $db;
 
-define('HOST', 'localhost');
-define('DB_NAME', 'db');
-define('USER', 'root');
-define('PASS', '');
+    public function __construct($host = null, $username = null, $password = null, $database = null) {
+        if ($host != null) {
+            $this->host = $host;
+            $this->username = $username;
+            $this->password = $password;
+            $this->database = $database;
+        }
+    }
+    
+    try {
+        $this->db = new PDO('mysql:host='.$this->host.';dbname='.$this->database, $this->username, $this->password, array(
+            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8',
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
+        ))
+    } catch(PDOException $e) {
+        die('Impossible de se connecter !')
+    }
 
-try {
-    $db = new PDO("mysql:host=" . HOST . ";dbname=" . DB_NAME, USER, PASS);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // print 'Connexion réussie !'.'<br/>'.'<br/>'; 
-} catch(PDOException $e) {
-    print $e;
-
+    public function query($sql) {
+        $req = $this->db->prepare($sql);
+        $req->execute();
+        return $req->fetchAll();
+    }
 }
-
 ?>
