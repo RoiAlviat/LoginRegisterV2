@@ -35,8 +35,7 @@
                 <div class="shop-container">
                     <div class="shop-article article1">
                         <div class="qte center"><span>1</span></div>
-                        <div class="choix-article center"><span>Royale</span></div>
-                        <div class="size center"><span>Large</span></div>
+                        <div class="choix-article center"><span>Royale Large</span></div>
                         <div class="prix-article center">9.99€</div>
                     </div>
                 </div>
