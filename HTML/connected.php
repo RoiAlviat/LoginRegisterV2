@@ -33,11 +33,14 @@
 
             <div><i class="fa-solid fa-cart-shopping"></i>
                 <div class="shop-container">
-                    <div class="shop-article"></div>
-                    <div class="shop-article"></div>
-                    <div class="shop-article"></div>
+                    <div class="shop-article article1">
+                        <div class="qte"><span>1</span></div>
+                        <div class="choix-article">Royale</div>
+                        <div class="size">Large</div>
+                        <div class="prix-article">L</div>
+                    </div>
                 </div>
-
+            </div>
             
                 
         </nav>
