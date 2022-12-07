@@ -13,15 +13,15 @@ class DB{
             $this->password = $password;
             $this->database = $database;
         }
-    }
-    
-    try {
-        $this->db = new PDO('mysql:host='.$this->host.';dbname='.$this->database, $this->username, $this->password, array(
-            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8',
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
-        ))
-    } catch(PDOException $e) {
-        die('Impossible de se connecter !')
+
+        try {
+            $this->db = new PDO('mysql:host='.$this->host.';dbname='.$this->database, $this->username, $this->password, array(
+                PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8',
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
+            ));
+        } catch(PDOException $e) {
+            die('Impossible de se connecter !');
+        }
     }
 
     public function query($sql) {
