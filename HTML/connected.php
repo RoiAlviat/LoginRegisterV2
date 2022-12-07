@@ -64,6 +64,10 @@
                                 <span>-Oignons-</span>
                                 <span>-Poivrons-</span>
                                 <span>-Olives-</span>
+                                <div>
+                                    <button>M</button>
+                                    <button>L</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -77,6 +81,10 @@
                                 <span>-Champignons-</span>
                                 <span>-Fromage-</span>
                                 <span>-Olives-</span>
+                                <div>
+                                    <button>M</button>
+                                    <button>L</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -90,6 +98,10 @@
                                 <span>-Chorizo-</span>
                                 <span>-Fromage-</span>
                                 <span>-Olives-</span>
+                                <div>
+                                    <button>M</button>
+                                    <button>L</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -105,6 +117,10 @@
                             <span>-Fromage de chèvre-</span>
                             <span>-Fromage-</span>
                             <span>-Olives-</span>
+                            <div>
+                                    <button>M</button>
+                                    <button>L</button>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -117,6 +133,10 @@
                         <span>-Roblochon-</span>
                         <span>-Olives-</span>
                         <span>-Oignons-</span>
+                        <div>
+                                    <button>M</button>
+                                    <button>L</button>
+                                </div>
                     </div>
                 </div>
             </div>
@@ -129,6 +149,10 @@
                         <span>-Saumon fumée-</span>
                         <span>-Fromage-</span>
                         <span>-Olives-</span>
+                        <div>
+                                    <button>M</button>
+                                    <button>L</button>
+                                </div>
                     </div>
                 </div>
             </div>
@@ -142,6 +166,10 @@
                         <span>-Oignons-</span>
                         <span>-Poivrons-</span>
                         <span>-Olives-</span>
+                        <div>
+                                    <button>M</button>
+                                    <button>L</button>
+                                </div>
                     </div>
                 </div>
             </div>
