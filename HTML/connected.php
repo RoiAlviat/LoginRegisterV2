@@ -65,8 +65,8 @@
                                 <span>-Poivrons-</span>
                                 <span>-Olives-</span>
                                 <div>
-                                    <button>M</button>
-                                    <button>L</button>
+                                    <button class="button-animate">M</button>
+                                    <button class="button-animate">L</button>
                                 </div>
                             </div>
                         </div>
