@@ -27,7 +27,7 @@
             
             <a href=""><div class="accueil">Accueil</div></a>
 
-            <a href=""><div class="Commandez">Commandez</div></a>
+            
 
             <a href=""><div class="contacthoraire">Contact & Horaires</div></a>
 

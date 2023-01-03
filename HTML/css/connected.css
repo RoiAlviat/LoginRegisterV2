@@ -141,9 +141,13 @@ header a {
     font-family: 'Amatic SC', cursive;
     font-size: 30px;
     cursor: pointer;
+    box-shadow: 0 4px black;
 }
 
-
+.card button:active {
+    box-shadow: 0 2px black;
+    transform: translateY(4px);
+}
 
 .ingredients {
     margin-top: 25px;
