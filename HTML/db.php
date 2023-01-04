@@ -11,10 +11,4 @@ try {
 } catch(PDOException $e) {
     print $e;
 }
-
-function query($sql) {
-    $req = $this->prepare($sql);
-    $req->execute();
-    return $req->fetchAll(PDO::FETCH_OBJ);
-}
 ?>
