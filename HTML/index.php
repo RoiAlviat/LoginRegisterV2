@@ -3,10 +3,17 @@ require_once 'db.php';
 
 session_start();
 
-$query = "SELECT * FROM products";
-$result = mysqli_query($db,$query);
+if (isset($_POST['add_to_cart'])) {
+    if (isset($_SESSION['cart'])) {
 
-while ($row = mysqli_fetch_array($result))
+    }else{
+        $session_array = array(
+            'id' => $_GET['id'],
+            'name' => $_GET['name'],
+            'price' => $_GET['price']
+        );
+    }
+}
 ?>
 
 <!DOCTYPE html>
