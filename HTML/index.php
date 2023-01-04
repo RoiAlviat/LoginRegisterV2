@@ -6,13 +6,15 @@ session_start();
 if (isset($_POST['add_to_cart'])) {
 
     if (isset($_SESSION['cart'])) {
-        
+
     }else{
         $session_array = array(
             'id' => $_GET['id'],
-            'name' => $_GET['name'],
-            'price' => $_GET['price']
+            'name' => $_POST['name'],
+            'price' => $_POST['price']
         );
+
+        $_SESSION['cart'][] = $session_array;
     }
 }
 ?>
