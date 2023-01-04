@@ -4,8 +4,9 @@ require_once 'db.php';
 session_start();
 
 if (isset($_POST['add_to_cart'])) {
-    if (isset($_SESSION['cart'])) {
 
+    if (isset($_SESSION['cart'])) {
+        
     }else{
         $session_array = array(
             'id' => $_GET['id'],
