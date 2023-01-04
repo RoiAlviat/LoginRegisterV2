@@ -1,3 +1,14 @@
+<?php>
+require_once 'db.php';
+
+session_start();
+
+$query = "SELECT * FROM products";
+$result = mysqli_query($db,$query);
+
+while ($row = mysqli_fetch_array($result))
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +43,7 @@
             <a href=""><div class="contacthoraire">Contact & Horaires</div></a>
 
             <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-            
+
                 
         </nav>
 
